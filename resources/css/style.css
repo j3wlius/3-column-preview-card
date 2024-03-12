@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+  --font-1: 'Lexend Deca', sans-serif;
+  --font-2: 'Big Shoulders Display', sans-serif;
+
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --trans-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-light-gray);
+  height: 100vh;
+  width: 100vw;
+  font-family: var(--font-1);
+}
+
+#container {
+  width: 80%;
+  max-width: 450px;
+  margin: 4rem auto;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: var(--font-2);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  display: block;
+  width: 50px;
+  margin-bottom: 2rem;
+}
+
+button {
+  display: block;
+  margin-block: 2rem;
+  border-radius: 30px;
+  border: 2px solid var(--trans-white);
+  padding: 15px 30px;
+  font-family: var(--font-1);
+  cursor: pointer;
+}
+
+.sedan div,
+.suvs div,
+.luxury div {
+  width: 80%;
+  margin-inline: auto;
+  padding-block: 2rem;
+  padding-right: 3.5rem;
+  line-height: 1.5;
+  color: var(--trans-white);
+}
+
+.sedan {
+  background-color: var(--bright-orange);
+  border-radius: 10px 10px 0 0;
+}
+
+.sedan button {
+  color: var(--bright-orange);
+}
+
+.suvs {
+  background-color: var(--dark-cyan);
+}
+
+.suvs button {
+  color: var(--dark-cyan);
+}
+
+.luxury {
+  background-color: var(--very-dark-cyan);
+  border-radius: 0 0 10px 10px;
+}
+
+.luxury button {
+  color: var(--very-dark-cyan);
+}
+
+.sedan button:hover,
+.suvs button:hover,
+.luxury button:hover {
+  color: var(--trans-white);
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 760px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container {
+        grid-template-columns: repeat(3, 1fr);
+        width: unset;
+        max-width: 75%;
+        height: 60%;
+    }
+
+    .sedan {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .luxury {
+        border-radius: 0 10px 10px 0;
+    }
+}
